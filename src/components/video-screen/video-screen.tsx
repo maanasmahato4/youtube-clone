@@ -1,5 +1,23 @@
+import React from 'react';
 import styles from './video-screen.module.css';
 
-export default function VideoScreen() {
-	return <div className={styles['screen-container']}></div>;
-}
+type videoScreenProps = {
+	videoUrl: string;
+};
+
+const VideoScreen: React.FC<videoScreenProps> = ({ videoUrl }) => {
+	console.log(videoUrl);
+	return (
+		<div className={styles['screen-container']}>
+			<iframe
+				className={styles['screen-video-player']}
+				src={videoUrl}
+				referrerPolicy='no-referrer-when-downgrade'
+				allow='autoplay; encrypted-media'
+				allowFullScreen
+			></iframe>
+		</div>
+	);
+};
+
+export default VideoScreen;

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { API_HOST, API_KEY, BASE_URL } from '../../utils/constants';
 
 const http = axios.create({
@@ -10,8 +10,13 @@ const http = axios.create({
 });
 
 export class HttpRequest {
-	static get = async () => {
-		const response = await http.get('/home');
-		console.log(response.data);
+	static searchVideos = async (search: string): Promise<AxiosResponse> => {
+		const response = await http.get(`/search`, { params: { q: search } });
+		return response;
+	};
+
+	static getVideoWithId = async (id: string): Promise<AxiosResponse> => {
+		const response = await http.get(`/embed/${id}`);
+		return response;
 	};
 }

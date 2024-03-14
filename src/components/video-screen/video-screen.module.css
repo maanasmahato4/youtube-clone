@@ -1,7 +1,11 @@
 .screen-container {
 	min-width: 100%;
 	min-height: 30vh;
-    background-color: blue;
+}
+
+.screen-video-player {
+    min-width: 100%;
+    min-height: inherit;
 }
 
 
@@ -14,5 +18,11 @@
 @media screen and (min-width: 540px){
     .screen-container {
         min-height: 50vh;
+    }
+}
+
+@media screen and (min-width: 1366px) and (min-height: 768px){
+    .screen-container {
+        min-height: 65vh;
     }
 }

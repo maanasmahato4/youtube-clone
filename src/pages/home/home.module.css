@@ -1,0 +1,18 @@
+.main-layout {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	gap: 1em;
+    padding: 1em;
+}
+
+@media screen and (min-width: 720px) {
+    .main-layout {
+        display: grid;
+        grid-template-columns: 1fr 30%;
+    }
+
+    .main-layout > section:nth-child(1){
+        grid-column: span 2;
+    }
+}

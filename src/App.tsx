@@ -1,22 +1,7 @@
-import SearchBar from './components/search/search';
-import SideBar from './components/sidebar/sidebar';
-import VideoScreen from './components/video-screen/video-screen';
-import styles from './app.module.css';
+import Home from './pages/home/home';
 
 function App() {
-	return (
-		<main className={styles['main-layout']}>
-			<section>
-				<SearchBar />
-			</section>
-			<section>
-				<VideoScreen />
-			</section>
-			<section>
-				<SideBar />
-			</section>
-		</main>
-	);
+	return <Home />;
 }
 
 export default App;

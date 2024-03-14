@@ -2,16 +2,21 @@ import React, { ChangeEvent } from 'react';
 import { SearchIcon } from '../../assets/icons/icons';
 import styles from './search.module.css';
 
-const SearchBar: React.FC = (): React.ReactElement => {
-	const [searchValue, setSearchValue] = React.useState<string>('');
+type SearchBarProps = {
+	searchValue: string;
+	setSearchValue: (searchValue: string) => void;
+	handleSearch: () => void;
+};
 
+const SearchBar: React.FC<SearchBarProps> = ({
+	searchValue,
+	setSearchValue,
+	handleSearch,
+}): React.ReactElement => {
 	function handleSearchValueChange(event: ChangeEvent<HTMLInputElement>): void {
 		setSearchValue(event.target.value);
 	}
 
-	function handleSearch(): void {
-		console.log(searchValue);
-	}
 	return (
 		<span className={styles['search-bar']}>
 			<input
