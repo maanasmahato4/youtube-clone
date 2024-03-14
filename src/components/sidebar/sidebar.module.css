@@ -1,0 +1,13 @@
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+}
+
+.card {
+    min-height: 13em;
+    max-height: 16em;
+    border: 1px solid black;
+    padding: 0.2em;
+    background-color: red;
+}

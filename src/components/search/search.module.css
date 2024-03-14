@@ -14,6 +14,8 @@
 	border: none;
 	background-color: transparent;
 	min-width: 80%;
+	border-top-left-radius: 20px;
+	border-bottom-left-radius: 20px;
 }
 
 .search-button {
