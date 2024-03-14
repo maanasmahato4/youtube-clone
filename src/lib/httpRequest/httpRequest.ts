@@ -14,9 +14,4 @@ export class HttpRequest {
 		const response = await http.get(`/search`, { params: { q: search } });
 		return response;
 	};
-
-	static getVideoWithId = async (id: string): Promise<AxiosResponse> => {
-		const response = await http.get(`/embed/${id}`);
-		return response;
-	};
 }
