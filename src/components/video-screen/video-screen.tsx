@@ -2,15 +2,16 @@ import React from 'react';
 import styles from './video-screen.module.css';
 
 type videoScreenProps = {
-	videoUrl: string;
+	defaultVideoId: string;
 };
 
-const VideoScreen: React.FC<videoScreenProps> = ({ videoUrl }) => {
+const VideoScreen: React.FC<videoScreenProps> = ({ defaultVideoId }) => {
+	const url: string = `https://youtube.com/embed/${defaultVideoId}`;
 	return (
 		<div className={styles['screen-container']}>
 			<iframe
 				className={styles['screen-video-player']}
-				src={videoUrl}
+				src={url}
 				referrerPolicy='no-referrer-when-downgrade'
 				allow='autoplay; encrypted-media'
 				allowFullScreen

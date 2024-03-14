@@ -3,32 +3,33 @@ import { VideoDetails } from '../pages/home/home';
 import { HttpRequest } from '../lib/httpRequest/httpRequest';
 
 type VideoContextProps = {
-	videoUrl: string;
-	setVideoUrl: React.Dispatch<React.SetStateAction<string>>;
 	videoList: VideoDetails[];
 	setVideoList: React.Dispatch<React.SetStateAction<VideoDetails[]>>;
+	videoId: string;
+	setVideoId: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export const VideoContext = React.createContext<VideoContextProps | undefined>(
-	undefined,
-);
+export const VideoContext = React.createContext<VideoContextProps>({
+	videoList: [],
+	setVideoList: () => {},
+	videoId: '',
+	setVideoId: () => {},
+});
 
 export const VideoContextProvider: React.FC<{ children: React.ReactNode }> = ({
 	children,
 }) => {
-	const [videoUrl, setVideoUrl] = React.useState<string>(
-		'https://youtube.com/embed/fRh_vgS2dFE',
-	);
+	const [videoId, setVideoId] = React.useState<string>('fRh_vgS2dFE');
 	const [videoList, setVideoList] = React.useState<VideoDetails[]>([]);
 
 	const contextValues = React.useMemo(
 		() => ({
-			videoUrl,
-			setVideoUrl,
 			videoList,
 			setVideoList,
+			videoId,
+			setVideoId,
 		}),
-		[videoUrl, videoList],
+		[videoList, videoId],
 	);
 
 	React.useEffect(() => {

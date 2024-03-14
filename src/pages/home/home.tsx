@@ -15,7 +15,7 @@ export type VideoDetails = {
 
 function Home() {
 	const [searchValue, setSearchValue] = React.useState<string>('');
-	const { videoUrl, setVideoUrl, videoList, setVideoList } =
+	const { videoList, setVideoList, videoId, setVideoId } =
 		React.useContext(VideoContext);
 	async function handleSearch(): Promise<void> {
 		const response = await HttpRequest.searchVideos(searchValue);
@@ -35,8 +35,7 @@ function Home() {
 			},
 		);
 		setVideoList(videosDetails);
-		const url = `https://youtube.com/embed/${response.data.contents[0].video.videoId}`;
-		setVideoUrl(url);
+		setVideoId(response.data.contents[0].video.videoId);
 	}
 	return (
 		<main className={styles['main-layout']}>
@@ -48,7 +47,7 @@ function Home() {
 				/>
 			</section>
 			<section>
-				<VideoScreen videoUrl={videoUrl} />
+				<VideoScreen defaultVideoId={videoId} />
 			</section>
 			<section>
 				<SideBar videos={videoList} />
