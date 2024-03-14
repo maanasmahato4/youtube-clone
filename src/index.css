@@ -1,0 +1,14 @@
+:root {
+	--primary-red-color: #ff3f00;
+	--secondary-black-c0lor: #000000;
+	--white-color: #fffffc;
+	--grey-color: #beb7a4;
+	--orange-color: #ff7f11;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
