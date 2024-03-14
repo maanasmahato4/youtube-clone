@@ -1,11 +1,18 @@
 .screen-container {
 	min-width: 100%;
 	min-height: 30vh;
+    background-color: blue;
 }
 
 
 @media screen and (orientation: landscape) {
     .screen-container {
         min-height: 90vh;
+    }
+}
+
+@media screen and (min-width: 540px){
+    .screen-container {
+        min-height: 50vh;
     }
 }
