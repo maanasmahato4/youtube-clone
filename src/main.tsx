@@ -6,11 +6,9 @@ import './index.css';
 import { VideoContextProvider } from './context/context.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-	<React.StrictMode>
-		<BrowserRouter>
-			<VideoContextProvider>
-				<App />
-			</VideoContextProvider>
-		</BrowserRouter>
-	</React.StrictMode>,
+	<BrowserRouter>
+		<VideoContextProvider>
+			<App />
+		</VideoContextProvider>
+	</BrowserRouter>,
 );

@@ -4,6 +4,14 @@
 	grid-template-rows: auto;
 	gap: 1em;
     padding: 1em;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-layout > section:nth-child(1){
+    display: grid;
+    align-items: center;
+    justify-content: center;
 }
 
 @media screen and (min-width: 720px) {
