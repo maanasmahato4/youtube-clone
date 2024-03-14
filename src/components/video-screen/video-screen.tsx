@@ -1,3 +1,5 @@
+import styles from './video-screen.module.css';
+
 export default function VideoScreen() {
-	return <div>video screen</div>;
+	return <div className={styles['screen-container']}>video screen</div>;
 }

@@ -1,0 +1,11 @@
+.screen-container {
+	min-width: 100%;
+	min-height: 30vh;
+}
+
+
+@media screen and (orientation: landscape) {
+    .screen-container {
+        min-height: 90vh;
+    }
+}
