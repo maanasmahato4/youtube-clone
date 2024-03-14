@@ -4,6 +4,7 @@ import SideBar from '../../components/sidebar/sidebar';
 import VideoScreen from '../../components/video-screen/video-screen';
 import styles from './home.module.css';
 import { HttpRequest } from '../../lib/httpRequest/httpRequest';
+import { VideoContext } from '../../context/context';
 
 export type VideoDetails = {
 	title: string;
@@ -14,9 +15,8 @@ export type VideoDetails = {
 
 function Home() {
 	const [searchValue, setSearchValue] = React.useState<string>('');
-	const [videoUrl, setVideoUrl] = React.useState<string>('');
-	const [videoList, setVideoList] = React.useState<VideoDetails[]>([]);
-
+	const { videoUrl, setVideoUrl, videoList, setVideoList } =
+		React.useContext(VideoContext);
 	async function handleSearch(): Promise<void> {
 		const response = await HttpRequest.searchVideos(searchValue);
 		const videosDetails = response.data.contents.map(

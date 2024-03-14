@@ -6,7 +6,6 @@ type videoScreenProps = {
 };
 
 const VideoScreen: React.FC<videoScreenProps> = ({ videoUrl }) => {
-	console.log(videoUrl);
 	return (
 		<div className={styles['screen-container']}>
 			<iframe

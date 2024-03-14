@@ -7,7 +7,6 @@ type sideBarProps = {
 };
 
 const SideBar: React.FC<sideBarProps> = ({ videos }): React.ReactElement => {
-	console.log(videos);
 	return (
 		<div className={styles['sidebar-container']}>
 			{videos.map((video, idx) => {
